@@ -1,0 +1,22 @@
+Great job setting up the components structure!
+
+Let’s address your questions about the extra files:
+
+1. **App.js and App.css in the `src` Folder**:
+   - Since you have moved `App.js` into `src/components/App`, you can delete the default `App.js` and `App.css` files in the `src` folder. Your new `App.js` in `src/components/App` will serve as the main component.
+   - Similarly, you don’t need `App.css` if each component has its own CSS module for styling. You can remove this file as well.
+
+2. **Other Default Files**:
+   - **`index.js`**: This file is needed because it serves as the entry point for rendering your `App` component. It should stay in `src` and import `App` from `src/components/App/App`.
+
+   - **`index.css`**: You can keep this file if you want a global CSS file for styles that apply across the entire app (e.g., resets, body styling). If you prefer to manage all styling within CSS modules, you can delete it.
+
+   - **`logo.svg`**: This is a placeholder logo. You can remove it if you won’t use it in your project.
+
+   - **`reportWebVitals.js`**: This file is optional. It’s included by Create React App to measure performance, but you can remove it if you’re not using it.
+   
+   - **`setupTests.js`**: This file is useful for testing setup if you’re writing tests. If you don’t plan to write tests immediately, you can delete it, but keep it if you want to set up testing later.
+
+In summary, you can remove `App.js`, `App.css`, `index.css`, `logo.svg`, `reportWebVitals.js`, and `setupTests.js` if they’re unnecessary for your project’s current scope. 
+
+Just ensure that `index.js` correctly imports `App` from its new location. Let me know if you'd like help with any of these adjustments!
