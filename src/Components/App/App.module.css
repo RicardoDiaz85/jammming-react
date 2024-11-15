@@ -1,17 +1,34 @@
-/* main App layout */
+/* src/Components/App/App.module.css */
+
+/* Main App layout */
 .app {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 1rem;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #333;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: #333;
+}
+
+/* Header styling */
+.header {
+  font-size: 3rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin: 2rem 0;
+}
+
+/* Results container layout */
+.resultsContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem; /* Adds space between child components */
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+  .resultsContainer {
+    flex-direction: column; /* Stack items vertically on smaller screens */
+    align-items: center;
   }
-  
-  .header {
-    font-size: 3rem;
-    font-weight: 600;
-    color: #333;
-    text-align: center;
-    margin: 2rem 0;
-  }
-  
+}

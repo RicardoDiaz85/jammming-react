@@ -3,11 +3,12 @@ import React from "react";
 import Tracklist from "../Tracklist/Tracklist"
 import styles from './SearchResults.module.css';
 
-function SearchResults() {
+function SearchResults( {tracks} ) {
+
     return (
         <div className={styles.searchResults}>
             <h2 className={styles.title}>Results</h2>
-            <Tracklist />
+            <Tracklist tracks={tracks} /> {/* Pass tracks to Tracklist */}
         </div>
     );
 }
