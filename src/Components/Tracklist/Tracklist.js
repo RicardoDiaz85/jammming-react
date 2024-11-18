@@ -3,20 +3,29 @@ import React from "react";
 import Track from "../Track/Track";
 import styles from "./Tracklist.module.css";
 
-function Tracklist( {tracks = []} ) { //default to empty array if track is undefined.
+/* 
+The Tracklist component receives:
+    tracks: An array of tracks to render.
+    onAdd or onRemove: Functions to add or remove a track.
+    isRemoval: A boolean indicating whether tracks can be removed (true) or added (false).
+The Tracklist should:
+    Map through the tracks array and render a Track component for each track.
+*/
 
+function Tracklist({ tracks = [], onAdd, onRemove, isRemoval }) {
     return (
-        <div className={styles.tracklist}>
-            {tracks.map(track => (       
+        <div className="Tracklist">
+            {tracks.map((track) => (
                 <Track
-                    key={track.id} // Unique key for React's reconciliation
-                    name={track.name}
-                    artist={track.artist}
-                    album={track.album}
+                    key={track.id}
+                    track={track}
+                    onAdd={onAdd}
+                    onRemove={onRemove}
+                    isRemoval={isRemoval}
                 />
             ))}
         </div>
     );
-}
+};
 
 export default Tracklist;

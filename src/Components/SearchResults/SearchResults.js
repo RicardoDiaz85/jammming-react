@@ -3,12 +3,21 @@ import React from "react";
 import Tracklist from "../Tracklist/Tracklist"
 import styles from './SearchResults.module.css';
 
-function SearchResults( {tracks} ) {
+/* 
+Search Results component receives 
+        tracks - an array of tracks(your Search Results state in App.js)
+        onAdd - function to add a track to the playlist.    
+The SearchResults component should:
+        Pass tracks to a Tracklist component.
+        The Tracklist will render a Track component for each track.
+*/
+function SearchResults( {tracks, onAdd} ) {
 
     return (
         <div className={styles.searchResults}>
             <h2 className={styles.title}>Results</h2>
-            <Tracklist tracks={tracks} /> {/* Pass tracks to Tracklist */}
+            {/* Pass tracks to Tracklist */}
+            <Tracklist tracks={tracks} onAdd={onAdd} isRemoval={false} />
         </div>
     );
 }
