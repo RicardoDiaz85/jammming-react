@@ -14,7 +14,7 @@ The Tracklist should:
 
 function Tracklist({ tracks = [], onAdd, onRemove, isRemoval }) {
     return (
-        <div className="Tracklist">
+        <div className={styles.tracklist}>
             {tracks.map((track) => (
                 <Track
                     key={track.id}
@@ -26,6 +26,7 @@ function Tracklist({ tracks = [], onAdd, onRemove, isRemoval }) {
             ))}
         </div>
     );
-};
+}
+
 
 export default Tracklist;

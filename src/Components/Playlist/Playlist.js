@@ -9,10 +9,10 @@ The Playlist component receives:
     tracks: An array of tracks (your playlistTracks state in App.js).
     onRemove: A function to remove a track from the playlist. 
 */
-function Playlist({ name, setName, tracks, onRemove}) {
+function Playlist({ name = "", setName, tracks, onRemove, onSave}) {
     // Handle inputchanges
     const handleNameChange = (event) => {
-        setName(event.target.value); // Update the playlist name in state
+        setName(event.target.value); // Dynamically Update the playlist name in state
     };
 
     return (
@@ -20,13 +20,16 @@ function Playlist({ name, setName, tracks, onRemove}) {
             {/* Displays the playlist name */}
             <input 
                 className={styles.title} 
-                value={name}
+                value={name} // Ensure value is always defined.
                 onChange={handleNameChange} 
                 placeholder="Enter Playlist Name"
             />
             {/* Pass tracks and onRemove to the Tracklist */}
             <Tracklist tracks={tracks} onRemove={onRemove} isRemoval={true} />
-            <button className={styles.button}>SAVE TO SPOTIFY</button>
+            
+            <button className={styles.button} onClick={onSave}>
+                SAVE TO SPOTIFY
+            </button>
         </div>
     );
 }

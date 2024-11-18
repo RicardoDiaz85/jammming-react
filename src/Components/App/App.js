@@ -10,14 +10,14 @@ import styles from './App.module.css'; //my css module
 function App() {
     // State for search results
     const [searchResults] = useState([
-        { id: 1, name: 'Track 1', artist: 'Artist 1', album: 'Album 1' },
-        { id: 2, name: 'Track 2', artist: 'Artist 2', album: 'Album 2' },
-        { id: 3, name: 'Track 3', artist: 'Artist 3', album: 'Album 3' },
+        { id: 1, name: 'Track 1', artist: 'Artist 1', album: 'Album 1', uri:'spotify:track:1'},
+        { id: 2, name: 'Track 2', artist: 'Artist 2', album: 'Album 2', uri:'spotify:track:2'},
+        { id: 3, name: 'Track 3', artist: 'Artist 3', album: 'Album 3', uri:'spotify:track:3'},
         // Add more sample tracks if desired
       ]);
 
     // State for playlist name - Manages the name of the playlist
-    const [playlistName, setPlaylistName] = useState("New Playlist");
+    const [playlistName, setPlaylistName] = useState("Enter Playlist Name"); // Default Value
 
     // State for playlist tracks - Stores tracks the user adds to the playlist
     const [playlistTracks, setPlaylistTracks] = useState([]);
@@ -35,6 +35,23 @@ function App() {
         setPlaylistTracks(playlistTracks.filter((savedTrack) => savedTrack.id !== track.id));
     };
 
+    const savePlaylist = () => {
+        // Extract the uri values from each track in the playlist
+        const trackUris = playlistTracks.map(track => track.uri);
+        
+        if (trackUris.length === 0) {
+            alert("Your playlist is empty!");
+            return;
+        }
+    
+        console.log("Saving playlist with URIs:", trackUris);
+    
+        // Reset the playlist (optional for now)
+        setPlaylistTracks([]);
+        setPlaylistName("New Playlist");
+    };
+    
+    
     /* Passed props to SearchResults and Playlist components . SearchResults receives tracks(search results) and onAdd(to ass tracks to the playlist
     Playlist receives name, tracks (playlist), and onRemove(to remove tracks from the playlist)*/
     return (
@@ -53,6 +70,7 @@ function App() {
                     setName={setPlaylistName} 
                     tracks={playlistTracks} 
                     onRemove={removeTrack} 
+                    onSave={savePlaylist}
                 />
             </div>
         </div>
