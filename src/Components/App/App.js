@@ -12,7 +12,6 @@ import { getAccessToken, searchSpotify, getUserId, createPlaylist, addTracksToPl
 function App() {
     const [token, setToken] = useState(null);
     const [searchResults, setSearchResults] = useState([]);
-    const [searchQuery, setSearchQuery] = useState("");
     // State for playlist name - Manages the name of the playlist
     const [playlistName, setPlaylistName] = useState(""); // Default Value
     // State for playlist tracks - Stores tracks the user adds to the playlist
