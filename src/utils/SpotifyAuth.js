@@ -71,3 +71,63 @@ export const searchSpotify = async (query, accessToken) => {
 
     return tracks;
 };
+
+// Function to get the current user's Spotify ID
+export const getUserId = async (accessToken) => {
+    const response = await fetch('https://api.spotify.com/v1/me', {
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+        },
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to fetch user ID');
+    }
+
+    const data = await response.json();
+    return data.id; // Returns the user's Spotify ID
+};
+
+
+// Function to create a new playlist
+export const createPlaylist = async (userId, playlistName, accessToken) => {
+    const response = await fetch(`https://api.spotify.com/v1/users/${userId}/playlists`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            name: playlistName,
+            description: 'Created using Jammming',
+            public: false, // Set to `true` if you want the playlist to be public
+        }),
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to create playlist');
+    }
+
+    const data = await response.json();
+    return data.id; // Returns the newly created playlist ID
+};
+
+// Function to add tracks to the playlist
+export const addTracksToPlaylist = async (playlistId, trackUris, accessToken) => {
+    const response = await fetch(`https://api.spotify.com/v1/playlists/${playlistId}/tracks`, {
+        method: 'POST',
+        headers: {
+            Authorization: `Bearer ${accessToken}`,
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+            uris: trackUris,
+        }),
+    });
+
+    if (!response.ok) {
+        throw new Error('Failed to add tracks to playlist');
+    }
+
+    return response.json();
+};

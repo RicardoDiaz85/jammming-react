@@ -6,13 +6,18 @@ import SearchBar from '../SearchBar/Searchbar';
 import SearchResults from '../SearchResults/SearchResults';
 import Playlist from '../Playlist/Playlist';
 import styles from './App.module.css'; //my css module
-import { getAccessToken, searchSpotify } from '../../utils/SpotifyAuth'; // import the methods. Import searchSpotify function and connect to the search bar
+import { getAccessToken, searchSpotify, getUserId, createPlaylist, addTracksToPlaylist } from '../../utils/SpotifyAuth'; // import the methods. Import searchSpotify function and connect to the search bar
 
 
 function App() {
     const [token, setToken] = useState(null);
     const [searchResults, setSearchResults] = useState([]);
     const [searchQuery, setSearchQuery] = useState("");
+    // State for playlist name - Manages the name of the playlist
+    const [playlistName, setPlaylistName] = useState(""); // Default Value
+    // State for playlist tracks - Stores tracks the user adds to the playlist
+    const [playlistTracks, setPlaylistTracks] = useState([]);
+    
 
     useEffect(() => {
         const token = getAccessToken(); // Parse the token
@@ -38,11 +43,6 @@ function App() {
         //{ id: 3, name: 'Track 3', artist: 'Artist 3', album: 'Album 3', uri:'spotify:track:3'},
     //]);
 
-    // State for playlist name - Manages the name of the playlist
-    const [playlistName, setPlaylistName] = useState(""); // Default Value
-
-    // State for playlist tracks - Stores tracks the user adds to the playlist
-    const [playlistTracks, setPlaylistTracks] = useState([]);
 
     /* Function to add a track to the playlist - Checks if the track is already in the playlist using its unique id.
     If not, it is adds the track to the PlaylistTracks state.*/
@@ -57,7 +57,8 @@ function App() {
         setPlaylistTracks(playlistTracks.filter((savedTrack) => savedTrack.id !== track.id));
     };
 
-    const savePlaylist = () => {
+    //update the savePlaylist function to: 1. Fetch the user’s Spotify ID. 2. Create a playlist with the custom name. 3. Add the selected tracks to the newly created playlist.
+    /*const savePlaylist = () => {
         // Extract the uri values from each track in the playlist
         const trackUris = playlistTracks.map(track => track.uri);
         
@@ -72,6 +73,45 @@ function App() {
         setPlaylistTracks([]);
         setPlaylistName("New Playlist");
     };
+    */
+
+    const savePlaylist = async () => {
+        if (!token) {
+            alert("You need to log in to save a playlist!");
+            return;
+        }
+    
+        if (playlistTracks.length === 0) {
+            alert("Your playlist is empty!");
+            return;
+        }
+    
+        try {
+            // Get the user's Spotify ID
+            const userId = await getUserId(token);
+            console.log("User ID:", userId);
+    
+            // Create a new playlist with the custom name
+            const playlistId = await createPlaylist(userId, playlistName, token);
+            console.log("Playlist ID:", playlistId);
+    
+            // Extract track URIs from the playlistTracks state
+            const trackUris = playlistTracks.map((track) => track.uri);
+    
+            // Add tracks to the new playlist
+            await addTracksToPlaylist(playlistId, trackUris, token);
+            console.log("Tracks added to playlist!");
+    
+            // Reset the playlist state
+            setPlaylistName("New Playlist");
+            setPlaylistTracks([]);
+            alert("Playlist saved successfully!");
+        } catch (error) {
+            console.error("Error saving playlist:", error);
+            alert("There was an error saving your playlist. Please try again.");
+        }
+    };
+    
     
     /* Passed props to SearchResults and Playlist components . SearchResults receives tracks(search results) and onAdd(to ass tracks to the playlist
     Playlist receives name, tracks (playlist), and onRemove(to remove tracks from the playlist)*/
