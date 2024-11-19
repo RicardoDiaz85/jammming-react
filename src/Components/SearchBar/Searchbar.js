@@ -1,16 +1,26 @@
 //static search input and button
-import React from "react";
+import React, {useState} from "react";
 import styles from './SearchBar.module.css';
 
-function SearchBar() {
+function SearchBar({onSearch}) {
+    const [query, setQuery] = useState("");
+
+    const handleSearch = () => {
+        if (query.trim()) {
+            onSearch(query); // Trigger search with the query
+        }
+    };
+
     return (
         <div className={styles.searchBar}>
             <input 
                 className={styles.input} 
                 type="text" 
-                placeholder="Enter a song, album or artist" 
+                placeholder="Enter a song, album or artist"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
             />
-            <button className={styles.button}>SEARCH</button>
+            <button className={styles.button} onClick={handleSearch}>SEARCH</button>
         </div>
     );    
 }

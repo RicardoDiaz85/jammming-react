@@ -78,7 +78,7 @@ function App() {
     return (
         <div className={styles.app}>
             <h1 className={styles.header}>Jammming</h1>
-            <SearchBar />
+            <SearchBar onSearch={handleSearch} /> 
             <div>    
                 {/* Pass search results and addTrack function to SearchResults */}
                 <SearchResults 

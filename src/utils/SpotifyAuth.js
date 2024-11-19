@@ -40,6 +40,7 @@ export const getAccessToken = () => {
     }
 };
 
+// Add a searchSpotify function that makes the search request using the /v1/search endpoint.
 export const searchSpotify = async (query, accessToken) => {
     if (!accessToken) {
         throw new Error("Access token is required for Spotify search");
