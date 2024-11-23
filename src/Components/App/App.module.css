@@ -2,11 +2,11 @@
 
 /* Main App layout */
 .app {
-  max-width: 800px;
-  margin: 0 auto;
+  max-width: 100%;
   padding: 1rem;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #333;
+  background: linear-gradient(119deg, #D6D6D6 27.28%, #B2B2B2 84.43%);
 }
 
 /* Header styling */
@@ -21,8 +21,7 @@
 /* Results container layout */
 .resultsContainer {
   display: flex;
-  justify-content: space-between;
-  gap: 1rem; /* Adds space between child components */
+  justify-content: space-between; 
 }
 
 /* Add responsiveness */

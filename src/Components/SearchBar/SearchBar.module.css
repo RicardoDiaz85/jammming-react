@@ -2,9 +2,9 @@
     display:flex;
     align-items: center;
     padding: 1rem;
-    background-color: #f1f1f1;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff20;
+    border-radius: 0.0625rem;
+    box-shadow: 0 2px 5px #0000001a;
     margin: 1rem 0;
 }
 
@@ -32,6 +32,6 @@
 
 
 .button:hover {
-    background-color: #005bb5;
+    background-color: #0c81f6;
   }
   
