@@ -1,6 +1,6 @@
 .searchResults {
     border-radius: 0.25rem;
-    width: stretch;
-    max-height: 50rem;
-    overflow: auto;
+    width: 100%;
+    height: stretch;
+    overflow-y:scroll;
   }

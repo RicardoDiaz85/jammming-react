@@ -1,28 +1,27 @@
-.playlist {
-    min-width: 21rem;
-    max-width: auto;
-    padding: 1.5rem 1rem;
-    border-radius: 0.5rem;
-    background: rgba(255, 255, 255, 0.20);
-    overflow: auto;
-    width: 21rem;
-    min-height:stretch;
-    max-height: 51rem;
-    overflow: auto;
+.playlistWrapper {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.20);
+  height: stretch;
+  height: stretch;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  
 }
 
-.title {
+.title { /* Enter playlist Name */
   width: stretch;
-  height: 3rem;
-  font-size: 1.25rem;
+  min-height: 3rem;
+  font-size: 1rem;
   text-align: center;
-  font-weight: 500;
-  color: #191919;
-  margin-bottom: 1rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 1.5rem 2rem 2rem;
   border-radius: 0.25rem 0.25rem 0rem 0rem;
   background-color: #f2f2f2;
-  border:1px solid rgba(255, 255, 255, 0.5);
+  border: none;
   border-bottom: 2px solid #4d4d4d;
+
 }
 
 .title:focus {
@@ -31,7 +30,24 @@
   border-radius: 4px;
 }
 
-.button {
+.playlist { /* container for the songs buttons*/
+    flex-direction: column;
+    width: 21rem;
+    height: auto;
+    overflow-y: scroll;
+    position:relative;
+    margin: 0rem 1.5rem;
+}
+
+
+.buttonWrapper{
+  display: flex;
+  margin-top: auto;
+  padding: 1rem;
+  z-index: 1;
+}
+
+.button { /* save to spotify button*/
   display: flex;
   text-align: center;
   background-color: #191919;
@@ -42,9 +58,10 @@
   color: #f2f2f2;
   font-weight: 500;
   cursor: pointer;
-  margin: 1rem auto ;
   transition: background-color 0.3s ease;
   letter-spacing: .05rem;
+  margin: 0 auto;
+  
 }
 
 .button:hover {

@@ -1,31 +1,34 @@
 .searchBar {
     display: flex;
     width: stretch;
-    align-items: center;
+    height: 3rem;
     border-radius: 0.25rem;
     border: none;
     background: #FAFAFA;
-    padding-right: 2px;
+    padding: 2px;
+    border: 2px solid #4d4d4d;
 }
 
 .input {
-    width:fill;
-    padding: 1rem;
+    width: stretch;
+    height: stretch;
     border: none;
     border-radius: .25rem 0 0 .25rem;
     font-size: 1rem;
     outline: none;
     font-weight: 400;
     font-size: 0.875rem;
+    padding-left: 1rem;
+    letter-spacing: -0.01rem;
 }
 
 
 .button {
     background-color: #191919;
     color: #f2f2f2;
+    padding: 1rem;
     font-weight: 500;
     border-radius: .25rem;
-    padding: 1rem 2rem;
     border: none;
     border-radius: .25rem;
     font-size: 0.75rem;

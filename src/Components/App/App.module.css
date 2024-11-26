@@ -3,25 +3,28 @@
 /* Main App layout */
 .app {
   display: flex;
-  min-width: 23.4375rem;
-  max-width: 48rem;
+  min-width: 365px;
+  max-width: 50rem;
   min-height: 50.75rem;
-  max-height: 80vh;;
+  max-height: 80vh;
   justify-content: space-between;
-  
+  margin: 3rem auto;
+  overflow-x: scroll;
+  padding: 0 1rem;
 }
 
 .navbar {
   display: flex;
-  width: auto;
-  height: 4rem;
+  max-width: 1200px;
+  height:6rem;
   padding: 0.5rem 2.5rem 0rem 2.5rem;
   justify-content: space-between;
   align-items: center;
   flex-shrink: 0;
+  margin: 0 auto;
 }
 
-.button {
+.button { /* sign out button */
   background: rgba(255, 255, 255, 0.40);
   color: #191919;
   letter-spacing: -0.00688rem;
@@ -39,7 +42,6 @@
 
 /* Header styling */
 .header {
-  flex: 1;
   color: #1a1a1a;
   font-size: 2rem;
   font-style: normal;
@@ -49,20 +51,21 @@
 }
 
 .searchContainer{
-  max-width: 23rem;
+  max-width: 25rem;
   min-width: 21rem; /* card size on phone*/
-  height:stretch;
-  padding: 1.5rem 1rem;
+  height: stretch;
+  padding: 1.5rem 1.5rem 2rem;
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.20);
-  overflow: auto;
+  overflow: hidden;
+  margin-right: 1rem;
 }
 
 .title {
   font-size: 0.875rem;    
   font-weight: 500;
   color: #808080;
-  margin-bottom: 1rem;
+  margin: 1rem 0 .5rem;
 }
 
 /* Results container layout */

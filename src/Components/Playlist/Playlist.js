@@ -16,20 +16,24 @@ function Playlist({ name = "", setName, tracks, onRemove, onSave}) {
     };
 
     return (
-        <div className={styles.playlist}>
-            {/* Displays the playlist name */}
+        <div className={styles.playlistWrapper}>
             <input 
-                className={styles.title} 
-                value={name} // Ensure value is always defined.
-                onChange={handleNameChange} 
-                placeholder="Enter Playlist Name"
-            />
-            {/* Pass tracks and onRemove to the Tracklist */}
-            <Tracklist tracks={tracks} onRemove={onRemove} isRemoval={true} />
-            
-            <button className={styles.button} onClick={onSave}>
-                SAVE TO SPOTIFY
-            </button>
+                    className={styles.title} 
+                    value={name} // Ensure value is always defined.
+                    onChange={handleNameChange} 
+                    placeholder="Enter Playlist Name"
+                />
+            <div className={styles.playlist}>
+                {/* Displays the playlist name */}
+                
+                {/* Pass tracks and onRemove to the Tracklist */}
+                <Tracklist tracks={tracks} onRemove={onRemove} isRemoval={true} />
+            </div>
+            <div className={styles.buttonWrapper}>
+                <button className={styles.button} onClick={onSave}>
+                    SAVE TO SPOTIFY
+                </button>
+            </div>
         </div>
     );
 }

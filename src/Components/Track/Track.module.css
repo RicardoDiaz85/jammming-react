@@ -6,11 +6,12 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease, transform 0.3s ease;
+  width: stretch;
 }
 
 .track:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: scale(1.02);
+  transform: scale(.99);
 }
 
 .info {
@@ -43,12 +44,9 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: auto;
 }
 
-.button:hover {
-  background-color: #ffffff;
-  cursor: pointer;
-}
 
 .buttonIcon {
   background-color:#ffffff;
