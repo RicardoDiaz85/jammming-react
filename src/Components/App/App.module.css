@@ -6,9 +6,9 @@
   min-width: 23.4375rem;
   max-width: 48rem;
   min-height: 50.75rem;
-  max-height: 85vh;;
-  margin: 3rem auto;
+  max-height: 80vh;;
   justify-content: space-between;
+  
 }
 
 .navbar {
@@ -49,10 +49,9 @@
 }
 
 .searchContainer{
-  max-width: auto;
+  max-width: 23rem;
   min-width: 21rem; /* card size on phone*/
-  min-height:stretch;
-  max-height: 51rem;
+  height:stretch;
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.20);
