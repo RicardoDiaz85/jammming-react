@@ -1,5 +1,5 @@
 .tracklist {
     display: flex;
     flex-direction: column;
-    gap: 0.625rem; /* 10px */
+    gap: 0.5rem; 
 }

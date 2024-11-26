@@ -115,24 +115,35 @@ function App() {
     /* Passed props to SearchResults and Playlist components . SearchResults receives tracks(search results) and onAdd(to ass tracks to the playlist
     Playlist receives name, tracks (playlist), and onRemove(to remove tracks from the playlist)*/
     return (
-        <div className={styles.app}>
-            <h1 className={styles.header}>Jammming</h1>
-            <SearchBar onSearch={handleSearch} /> 
-            <div>    
-                {/* Pass search results and addTrack function to SearchResults */}
-                <SearchResults 
-                    tracks={searchResults} 
-                    onAdd={addTrack} 
-                />
-                {/* Pass playlist data, removeTrack function, and playlist name to Playlist */}
-                <Playlist 
-                    name={playlistName} 
-                    setName={setPlaylistName} 
-                    tracks={playlistTracks} 
-                    onRemove={removeTrack} 
-                    onSave={savePlaylist}
-                />
-            </div>
+        <div>
+                <div className= {styles.navbar}> 
+                    <h1 className={styles.header}>Jammming</h1>
+                    <button className={styles.button} /*onClick={handleSignOut}*/>SIGN OUT</button>
+                </div>
+        
+                <div className={styles.app}>
+            
+                     <div className={styles.searchContainer}>  
+                          
+                        <SearchBar onSearch={handleSearch} /> 
+                        {/* Pass search results and addTrack function to SearchResults */}
+                        <h2 className={styles.title}>Results</h2>
+                        <SearchResults 
+                            tracks={searchResults} 
+                            onAdd={addTrack} 
+                        />
+                    </div>
+                    <div>
+                        {/* Pass playlist data, removeTrack function, and playlist name to Playlist */}
+                        <Playlist 
+                            name={playlistName} 
+                            setName={setPlaylistName} 
+                            tracks={playlistTracks} 
+                            onRemove={removeTrack} 
+                            onSave={savePlaylist}
+                        />
+                    </div>
+                </div>
         </div>
     );
 };

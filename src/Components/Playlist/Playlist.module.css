@@ -1,40 +1,53 @@
 .playlist {
-  padding: 1rem;
-  background-color: #f8f8f8;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin: 1rem 0;
+    min-width: 23.4375rem;
+    max-width: 24rem;
+    max-height:rem;
+    min-height:50.75rem;
+    padding: 1.5rem 1rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.20);
+    overflow: auto;
+    width: 21rem;
+    height: auto;
+    overflow: auto;
 }
 
 .title {
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: #333;
+  width: stretch;
+  font-size: 1.25rem;
+  text-align: center;
+  font-weight: 500;
+  color: #191919;
   margin-bottom: 1rem;
   padding: 0.5rem 1rem;
-  border: none;
-  border-radius: 2px;
-  outline: none;
-  background-color: white;
+  border-radius: 0.25rem 0.25rem 0rem 0rem;
+  background-color: #f2f2f2;
+  border:1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 2px solid #4d4d4d;
 }
 
 .title:focus {
-  border: 1px solid #0071e3;
-  background-color: #f0f8ff;
+  border: 1px solid #191919;
+  background-color: #ffffff;
   border-radius: 4px;
 }
 
 .button {
-  background-color: #0071e3;
-  color: white;
-  padding: 0.5rem 1rem;
+  display: flex;
+  text-align: center;
+  background-color: #191919;
+  padding: 1rem 2rem;
   border: none;
-  border-radius: 4px;
-  font-size: 1rem;
+  border-radius: .25rem;
+  font-size: .75rem;
+  color: #f2f2f2;
+  font-weight: 500;
   cursor: pointer;
+  margin: 1rem auto ;
   transition: background-color 0.3s ease;
+  letter-spacing: .05rem;
 }
 
 .button:hover {
-  background-color: #005bb5;
+  background-color: #000000;
 }

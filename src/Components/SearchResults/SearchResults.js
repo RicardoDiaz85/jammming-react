@@ -15,7 +15,7 @@ function SearchResults( {tracks, onAdd} ) {
 
     return (
         <div className={styles.searchResults}>
-            <h2 className={styles.title}>Results</h2>
+           
             {/* Pass tracks to Tracklist */}
             <Tracklist tracks={tracks} onAdd={onAdd} isRemoval={false} />
         </div>
