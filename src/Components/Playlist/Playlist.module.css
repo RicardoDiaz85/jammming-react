@@ -1,25 +1,24 @@
 .playlist {
-    min-width: 23.4375rem;
-    max-width: 24rem;
-    max-height:rem;
-    min-height:50.75rem;
+    min-width: 21rem;
+    max-width: auto;
     padding: 1.5rem 1rem;
     border-radius: 0.5rem;
     background: rgba(255, 255, 255, 0.20);
     overflow: auto;
     width: 21rem;
-    height: auto;
+    min-height:stretch;
+    max-height: 51rem;
     overflow: auto;
 }
 
 .title {
   width: stretch;
+  height: 3rem;
   font-size: 1.25rem;
   text-align: center;
   font-weight: 500;
   color: #191919;
   margin-bottom: 1rem;
-  padding: 0.5rem 1rem;
   border-radius: 0.25rem 0.25rem 0rem 0rem;
   background-color: #f2f2f2;
   border:1px solid rgba(255, 255, 255, 0.5);

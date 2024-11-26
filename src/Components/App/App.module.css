@@ -4,11 +4,11 @@
 .app {
   display: flex;
   min-width: 23.4375rem;
-  max-width: 800px;
+  max-width: 48rem;
   min-height: 50.75rem;
+  max-height: 85vh;;
   margin: 3rem auto;
-  border: 1px solid red; 
-  gap: 1rem
+  justify-content: space-between;
 }
 
 .navbar {
@@ -51,8 +51,8 @@
 .searchContainer{
   max-width: auto;
   min-width: 21rem; /* card size on phone*/
-  max-height:auto;
-  min-height:50.75rem;
+  min-height:stretch;
+  max-height: 51rem;
   padding: 1.5rem 1rem;
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.20);
