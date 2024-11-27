@@ -30,8 +30,9 @@
 }
 
 
-.button:hover {
-  background: rgba(255, 255, 255, 0.60);
+.button:hover { 
+  background: #191919;
+  color: rgb(240, 240, 240);
   cursor: pointer;
 }
 
@@ -51,7 +52,7 @@
   width: 22rem; /* card size on phone*/
   padding: 1.5rem 1rem 2rem;
   border-radius: 0.5rem;
-  background: rgba(255, 255, 255, 0.20);
+  background: rgba(255, 255, 255, 0.25);
   margin-right: auto;
 }
 

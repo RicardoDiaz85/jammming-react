@@ -33,6 +33,23 @@ function App() {
             console.log("Error during Spotify search:", error);
         }
     };
+
+    // Add the handleSignOut function
+    const handleSignOut = () => {
+        // Clear token from state
+        setToken(null);
+
+        // Remove token from localStorage or sessionStorage if used
+        localStorage.removeItem('spotify_access_token'); // Replace with sessionStorage if applicable
+
+        // Optionally redirect the user to Spotify's logout page
+        window.location.href = 'https://accounts.spotify.com/logout';
+
+        // (Optional) Clear app state like search results or playlists if needed
+        setSearchResults([]);
+        setPlaylistName("");
+        setPlaylistTracks([]);
+    };
     
 
     // State for search results for testing
@@ -107,8 +124,9 @@ function App() {
             alert("Playlist saved successfully!");
         } catch (error) {
             console.error("Error saving playlist:", error);
-            alert("There was an error saving your playlist. Please try again.");
+            alert("There was an error saving your playlist.\nPlease enter a Playlist name!");
         }
+        
     };
     
     
@@ -118,7 +136,7 @@ function App() {
         <div>
                 <div className= {styles.navbar}> 
                     <h1 className={styles.header}>Jammming</h1>
-                    <button className={styles.button} /*onClick={handleSignOut}*/>SIGN OUT</button>
+                    <button className={styles.button} onClick={handleSignOut}>SIGN OUT</button>
                 </div>
         
                 <div className={styles.app}>

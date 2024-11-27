@@ -15,6 +15,14 @@ function Playlist({ name = "", setName, tracks, onRemove, onSave}) {
         setName(event.target.value); // Dynamically Update the playlist name in state
     };
 
+    // Handle pressing Enter key
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+            onSave(); // Trigger the onSave function when Enter is pressed
+        }
+    };
+
+
     return (
         <div className={styles.playlistWrapper}>
             <input 
@@ -22,6 +30,7 @@ function Playlist({ name = "", setName, tracks, onRemove, onSave}) {
                     value={name} // Ensure value is always defined.
                     onChange={handleNameChange} 
                     placeholder="Enter Playlist Name"
+                    onKeyDown={handleKeyPress} // Add key press listener
                 />
             <div className={styles.playlist}>
                 {/* Displays the playlist name */}
