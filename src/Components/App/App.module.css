@@ -9,13 +9,13 @@
   max-height: 80vh;
   justify-content: space-between;
   margin: 3rem auto;
-  overflow-x: scroll;
-  padding: 0 1rem;
+  
 }
 
 .navbar {
   display: flex;
   max-width: 1200px;
+  min-width: 375;
   height:6rem;
   padding: 0.5rem 2.5rem 0rem 2.5rem;
   justify-content: space-between;
