@@ -3,24 +3,19 @@
 /* Main App layout */
 .app {
   display: flex;
-  min-width: 365px;
-  max-width: 50rem;
-  min-height: 50.75rem;
-  max-height: 80vh;
-  justify-content: space-between;
+  width: 50rem;
+  height: 80vh;
   margin: 3rem auto;
-  
+  overflow-x: auto;
 }
 
 .navbar {
   display: flex;
+  min-width: none;
   max-width: 1200px;
-  min-width: 375;
-  height:6rem;
   padding: 0.5rem 2.5rem 0rem 2.5rem;
   justify-content: space-between;
   align-items: center;
-  flex-shrink: 0;
   margin: 0 auto;
 }
 
@@ -50,15 +45,14 @@
   letter-spacing: -.05rem;
 }
 
-.searchContainer{
-  max-width: 25rem;
-  min-width: 21rem; /* card size on phone*/
-  height: stretch;
-  padding: 1.5rem 1.5rem 2rem;
+.searchContainer { 
+  display:flex;
+  flex-direction: column;
+  width: 22rem; /* card size on phone*/
+  padding: 1.5rem 1rem 2rem;
   border-radius: 0.5rem;
   background: rgba(255, 255, 255, 0.20);
-  overflow: hidden;
-  margin-right: 1rem;
+  margin-right: auto;
 }
 
 .title {
@@ -68,16 +62,30 @@
   margin: 1rem 0 .5rem;
 }
 
-/* Results container layout */
-.resultsContainer {
-  display: flex;
-  justify-content: space-between; 
-}
+
+
 
 /* Add responsiveness */
-@media (max-width: 768px) {
-  .resultsContainer {
-    flex-direction: row; /* Stack items vertically on smaller screens */
-    align-items: center;
+@media (max-width: 700px) {
+  .navbar {
+    padding: 0.5rem 1rem 0rem 1rem;
+    width: auto;
+    overflow: hidden;
+  
+  }
+
+  .app {
+    margin-top: 2rem;
+    width: auto;
+    overflow: auto;
+    overflow-x: scroll;
+    padding: 0 1rem;
+    height: 80dvh;
+  }
+
+  .searchContainer {
+    min-width: 18rem;
+    margin-right: 1rem;
   }
 }
+

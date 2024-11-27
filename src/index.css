@@ -11,7 +11,7 @@ body {
   /* Background layering: gradient + dots */
   background: 
     radial-gradient(circle, rgba(255, 255, 255, 0.302) 1px, transparent 2px), /* Dots */
-    linear-gradient(110deg, #D6D6D6 49.54%, #B2B2B2 100%); /* Gradient */
+    linear-gradient(110deg, #D6D6D6 49.54%, #9f9f9f 100%); /* Gradient */
 
   background-size: 
     10px 10px, /* Size of dots */

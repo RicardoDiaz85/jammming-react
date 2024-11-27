@@ -125,23 +125,24 @@ function App() {
             
                      <div className={styles.searchContainer}>  
                           
-                        <SearchBar onSearch={handleSearch} /> 
-                        {/* Pass search results and addTrack function to SearchResults */}
-                        <h2 className={styles.title}>Results</h2>
-                        <SearchResults 
-                            tracks={searchResults} 
-                            onAdd={addTrack} 
-                        />
+                            <SearchBar onSearch={handleSearch} /> 
+                            {/* Pass search results and addTrack function to SearchResults */}
+                            <h2 className={styles.title}>Results</h2>
+                            <SearchResults 
+                                tracks={searchResults} 
+                                onAdd={addTrack} 
+                            />
+                        
                     </div>
                     <div>
-                        {/* Pass playlist data, removeTrack function, and playlist name to Playlist */}
-                        <Playlist 
-                            name={playlistName} 
-                            setName={setPlaylistName} 
-                            tracks={playlistTracks} 
-                            onRemove={removeTrack} 
-                            onSave={savePlaylist}
-                        />
+                            {/* Pass playlist data, removeTrack function, and playlist name to Playlist */}
+                            <Playlist 
+                                name={playlistName} 
+                                setName={setPlaylistName} 
+                                tracks={playlistTracks} 
+                                onRemove={removeTrack} 
+                                onSave={savePlaylist}
+                            />
                     </div>
                 </div>
         </div>

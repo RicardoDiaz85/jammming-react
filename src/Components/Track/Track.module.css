@@ -6,7 +6,6 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.2s ease, transform 0.3s ease;
-  width: stretch;
 }
 
 .track:hover {
@@ -15,7 +14,7 @@
 }
 
 .info {
-  width: stretch;
+  width: 100%;
   white-space: nowrap; /* Prevents text from wrapping to the next line */
   overflow: hidden;    /* Ensures overflowing content is clipped */
   margin-right: 1rem;
@@ -44,7 +43,6 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: auto;
 }
 
 
