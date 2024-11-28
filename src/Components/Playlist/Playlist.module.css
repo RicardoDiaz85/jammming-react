@@ -48,10 +48,10 @@
 }
 
 .button { /* save to spotify button*/
-  display: flex;
-  text-align: center;
+  justify-content: center;
   background-color: #191919;
-  padding: 1rem 2rem;
+  height: 47px;
+  width:180px;
   border: none;
   border-radius: .25rem;
   font-size: .75rem;

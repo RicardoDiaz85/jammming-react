@@ -10,11 +10,11 @@ body {
 
   /* Background layering: gradient + dots */
   background: 
-    radial-gradient(circle, rgba(255, 255, 255, 0.302) 1px, transparent 2px), /* Dots */
-    linear-gradient(110deg, #D6D6D6 49.54%, #9f9f9f 100%); /* Gradient */
+    radial-gradient(circle, rgba(255, 255, 255, 0.25) 1px, transparent 2px), /* Dots */
+    linear-gradient(135deg, #D6D6D6 49.54%, #9f9f9f 100%); /* Gradient */
 
   background-size: 
-    10px 10px, /* Size of dots */
+    10px 10px, /* Size of gap between dots */
     cover; /* Gradient covers the entire screen */
 
   background-repeat: repeat, no-repeat; /* Repeat dots, no-repeat for gradient */

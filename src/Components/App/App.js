@@ -10,12 +10,14 @@ import { getAccessToken, searchSpotify, getUserId, createPlaylist, addTracksToPl
 
 
 function App() {
-    const [token, setToken] = useState(null);
-    const [searchResults, setSearchResults] = useState([]);
+     const [token, setToken] = useState(null);
+        const [searchResults, setSearchResults] = useState([]);
     // State for playlist name - Manages the name of the playlist
-    const [playlistName, setPlaylistName] = useState(""); // Default Value
+        const [playlistName, setPlaylistName] = useState(""); // Default Value
     // State for playlist tracks - Stores tracks the user adds to the playlist
-    const [playlistTracks, setPlaylistTracks] = useState([]);
+        const [playlistTracks, setPlaylistTracks] = useState([]);
+    // Track saving state
+        const [isSaving, setIsSaving] = useState(false); 
     
 
     useEffect(() => {
@@ -101,7 +103,8 @@ function App() {
             alert("Your playlist is empty!");
             return;
         }
-    
+
+        setIsSaving(true); // Start the loading state
         try {
             // Get the user's Spotify ID
             const userId = await getUserId(token);
@@ -121,14 +124,30 @@ function App() {
             // Reset the playlist state
             setPlaylistName("New Playlist");
             setPlaylistTracks([]);
+
+            
+            
+        // Ensure the spinner is visible for at least 1 second
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        // Stop spinner, then delay the alert slightly to allow re-render
+        setIsSaving(false);
+        setTimeout(() => {
             alert("Playlist saved successfully!");
-        } catch (error) {
-            console.error("Error saving playlist:", error);
+        }, 100); // Allow React to update before showing the alert
+    } catch (error) {
+        console.error("Error saving playlist:", error);
+
+        // Ensure the spinner is visible for at least 1 second
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+
+        // Stop spinner, then delay the alert slightly to allow re-render
+        setIsSaving(false);
+        setTimeout(() => {
             alert("There was an error saving your playlist.\nPlease enter a Playlist name!");
-        }
-        
-    };
-    
+        }, 100); // Allow React to update before showing the alert
+    }
+};
     
     /* Passed props to SearchResults and Playlist components . SearchResults receives tracks(search results) and onAdd(to ass tracks to the playlist
     Playlist receives name, tracks (playlist), and onRemove(to remove tracks from the playlist)*/
@@ -160,6 +179,7 @@ function App() {
                                 tracks={playlistTracks} 
                                 onRemove={removeTrack} 
                                 onSave={savePlaylist}
+                                isSaving={isSaving} // Pass saving state as a prop
                             />
                     </div>
                 </div>

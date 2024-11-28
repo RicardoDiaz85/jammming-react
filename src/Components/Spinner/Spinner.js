@@ -1,9 +1,12 @@
+
+import React from "react";
+import styles from './Spinner.module.css';
+
 function LoadingSpinner() {
 
     return (
-        <div className="loading-spinner">
-            <div className="spinner"></div>
-            <p>Saving your playlist...</p>
+        <div className={styles.spinnerOverlay}>
+            <div className={styles.spinner}></div>
         </div>
     );
 

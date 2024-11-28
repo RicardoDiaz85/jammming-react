@@ -3,13 +3,16 @@
 import React from "react";
 import Tracklist from '../Tracklist/Tracklist';
 import styles from './Playlist.module.css';
+import LoadingSpinner from "../Spinner/Spinner";
+
 /*
 The Playlist component receives:
     name: The playlist name (your playlistName state in App.js).
     tracks: An array of tracks (your playlistTracks state in App.js).
     onRemove: A function to remove a track from the playlist. 
 */
-function Playlist({ name = "", setName, tracks, onRemove, onSave}) {
+function Playlist({ name = "", setName, tracks, onRemove, onSave, isSaving}) {
+
     // Handle inputchanges
     const handleNameChange = (event) => {
         setName(event.target.value); // Dynamically Update the playlist name in state
@@ -21,7 +24,6 @@ function Playlist({ name = "", setName, tracks, onRemove, onSave}) {
             onSave(); // Trigger the onSave function when Enter is pressed
         }
     };
-
 
     return (
         <div className={styles.playlistWrapper}>
@@ -39,10 +41,11 @@ function Playlist({ name = "", setName, tracks, onRemove, onSave}) {
                 <Tracklist tracks={tracks} onRemove={onRemove} isRemoval={true} />
             </div>
             <div className={styles.buttonWrapper}>
-                <button className={styles.button} onClick={onSave}>
-                    SAVE TO SPOTIFY
+                <button className={styles.button} onClick={onSave} disabled={isSaving}>  {/*Disable button during save*/}
+                    {isSaving ? "SAVING..." : "SAVE TO SPOTIFY"}
                 </button>
             </div>
+            {isSaving && < LoadingSpinner />} {/* Show spinner during save */}
         </div>
     );
 }
