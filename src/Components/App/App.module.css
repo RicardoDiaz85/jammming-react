@@ -19,18 +19,18 @@
   margin: 0 auto;
 }
 
-.button { /* sign out button */
-  background: rgba(255, 255, 255, 0.40);
+.button {
+  /* sign out button */
+  background: rgba(255, 255, 255, 0.4);
   color: #191919;
   letter-spacing: -0.00688rem;
   border: 1px solid #333;
   border-radius: 0.25rem;
-  padding: 0.5rem .75rem;
+  padding: 0.5rem 0.75rem;
   font-weight: 500;
 }
 
-
-.button:hover { 
+.button:hover {
   background: #191919;
   color: rgb(240, 240, 240);
   cursor: pointer;
@@ -42,12 +42,12 @@
   font-size: 2rem;
   font-style: normal;
   font-weight: 600;
-  line-height: 2.5rem; 
-  letter-spacing: -.05rem;
+  line-height: 2.5rem;
+  letter-spacing: -0.05rem;
 }
 
-.searchContainer { 
-  display:flex;
+.searchContainer {
+  display: flex;
   flex-direction: column;
   width: 22rem; /* card size on phone*/
   padding: 1.5rem 1rem 2rem;
@@ -57,14 +57,11 @@
 }
 
 .title {
-  font-size: 0.875rem;    
+  font-size: 0.875rem;
   font-weight: 500;
   color: #808080;
-  margin: 1rem 0 .5rem;
+  margin: 1rem 0 0.5rem;
 }
-
-
-
 
 /* Add responsiveness */
 @media (max-width: 700px) {
@@ -72,7 +69,6 @@
     padding: 0.5rem 1rem 0rem 1rem;
     width: auto;
     overflow: hidden;
-  
   }
 
   .app {
@@ -89,4 +85,3 @@
     margin-right: 1rem;
   }
 }
-

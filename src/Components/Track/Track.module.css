@@ -10,13 +10,13 @@
 
 .track:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  transform: scale(.99);
+  transform: scale(0.99);
 }
 
 .info {
   width: 100%;
   white-space: nowrap; /* Prevents text from wrapping to the next line */
-  overflow: hidden;    /* Ensures overflowing content is clipped */
+  overflow: hidden; /* Ensures overflowing content is clipped */
   margin-right: 1rem;
   height: auto;
 }
@@ -24,7 +24,7 @@
 .info h3 {
   display: block;
   font-size: 1rem;
-  color:#333;
+  color: #333;
   font-weight: 500;
   letter-spacing: -0.00875rem;
   line-height: 100%;
@@ -33,7 +33,7 @@
 }
 
 .info p {
-  font-size: .9rem;
+  font-size: 0.9rem;
   color: #757575;
   line-height: 100%;
 }
@@ -45,9 +45,8 @@
   transition: background-color 0.3s ease;
 }
 
-
 .buttonIcon {
-  background-color:#ffffff;
+  background-color: #ffffff;
   width: 1.65rem;
   height: 1.65rem;
 }

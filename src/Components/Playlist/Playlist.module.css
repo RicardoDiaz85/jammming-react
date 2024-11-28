@@ -8,7 +8,8 @@
   padding: 1.5rem 1rem 1.5rem;
 }
 
-.title { /* Enter playlist Name */
+.title {
+  /* Enter playlist Name */
   width: 100%;
   min-height: 3rem;
   font-size: 1rem;
@@ -19,11 +20,11 @@
   background-color: #f2f2f2;
   border: none;
   border-bottom: 2px solid #4d4d4d;
-  margin-bottom: 2rem
+  margin-bottom: 2rem;
 }
 
 .title::placeholder {
-  color: #808080
+  color: #808080;
 }
 
 .title:focus {
@@ -32,46 +33,44 @@
   border-radius: 4px;
 }
 
-.playlist { /* container for the songs buttons*/
-    flex-direction: column;
-    width: 100%;
-    overflow-y: scroll;
-    position:relative;
+.playlist {
+  /* container for the songs buttons*/
+  flex-direction: column;
+  width: 100%;
+  overflow-y: scroll;
+  position: relative;
 }
 
-
-.buttonWrapper{
+.buttonWrapper {
   display: flex;
   margin-top: auto;
   z-index: 1;
   padding-top: 1rem;
 }
 
-.button { /* save to spotify button*/
+.button {
+  /* save to spotify button*/
   justify-content: center;
   background-color: #191919;
   height: 47px;
-  width:180px;
+  width: 180px;
   border: none;
-  border-radius: .25rem;
-  font-size: .75rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
   color: #f2f2f2;
   font-weight: 500;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  letter-spacing: .05rem;
+  letter-spacing: 0.05rem;
   margin: 0 auto;
 }
 
-
 .button:hover {
   background-color: #000000;
-}     
-
+}
 
 @media (max-width: 700px) {
-
-  .playlistWrapper  {
+  .playlistWrapper {
     width: 17rem;
   }
 }
