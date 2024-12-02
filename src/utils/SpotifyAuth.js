@@ -3,7 +3,6 @@ let accessToken; // Declare accessToken at a higher scope so it persists
 const clientId = "aad34981898a496ebb6c3889e5644736"; // Replace with your actual Client ID
 const redirectUri = "http://project-jammming-cc.netlify.app"; // Your redirect URI
 const scopes = ["playlist-modify-public", "playlist-modify-private"];
-const authUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(redirectUri)}&scope=${scopes.join('%20')}`;
 
 // Construct the authorization URL
 export const getAuthUrl = () => {
