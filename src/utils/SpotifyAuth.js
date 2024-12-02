@@ -1,7 +1,8 @@
 let accessToken; // Declare accessToken at a higher scope so it persists
 
-const clientId = process.env.REACT_APP_CLIENT_ID; // Environment Variables for Sensitive Data Store the clientId and redirectUri in environment variables
-const redirectUri = process.env.REACT_APP_REDIRECT_URI || "http://localhost:3000"; // environment variables to dynamically assign the redirectUri depending on the environment (local vs. production)
+const clientId = "aad34981898a496ebb6c3889e5644736"; // Environment Variables for Sensitive Data Store the clientId and redirectUri in environment variables
+const redirectUri =
+  process.env.REACT_APP_REDIRECT_URI || "http://localhost:3000"; // environment variables to dynamically assign the redirectUri depending on the environment (local vs. production)
 const scopes = ["playlist-modify-public", "playlist-modify-private"];
 
 // Construct the authorization URL
@@ -28,15 +29,13 @@ export const getAccessToken = () => {
 
     // Handle Token Expiration Automatically reauthenticate after the token expires:
     window.setTimeout(() => {
-        accessToken = "";
-        window.location.href = getAuthUrl();
+      accessToken = "";
+      window.location.href = getAuthUrl();
     }, expiresIn * 1000);
-      
 
     // Remove token from the URL Access Token URL Cleanup Ensure you don’t overwrite the current path:
     const newUrl = window.location.pathname;
     window.history.pushState("Access Token", null, newUrl); //changed "/" for newUrl
-
 
     return accessToken;
   } else {
