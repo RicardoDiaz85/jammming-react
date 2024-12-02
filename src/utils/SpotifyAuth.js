@@ -1,19 +1,16 @@
 let accessToken; // Declare accessToken at a higher scope so it persists
 
-const clientId = process.env.REACT_APP_CLIENT_ID || "aad34981898a496ebb6c3889e5644736"; // Environment Variables for Sensitive Data Store the clientId and redirectUri in environment variables
+const clientId = "aad34981898a496ebb6c3889e5644736"; // Environment Variables for Sensitive Data Store the clientId and redirectUri in environment variables
 const redirectUri =
   process.env.REACT_APP_REDIRECT_URI || "http://localhost:3000"; // environment variables to dynamically assign the redirectUri depending on the environment (local vs. production)
 const scopes = ["playlist-modify-public", "playlist-modify-private"];
 
 // Construct the authorization URL
 export const getAuthUrl = () => {
-    if (!clientId) {
-        throw new Error("Spotify Client ID is missing!");
-      }
-      return `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(
-        redirectUri
-      )}&scope=${encodeURIComponent(scopes.join(" "))}`;
-    };
+  return `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&redirect_uri=${encodeURIComponent(
+    redirectUri
+  )}&scope=${encodeURIComponent(scopes.join(" "))}`;
+};
 
 // Function to parse the access token
 export const getAccessToken = () => {
