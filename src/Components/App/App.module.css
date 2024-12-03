@@ -77,7 +77,7 @@
     overflow: auto;
     overflow-x: scroll;
     padding: 0 1rem;
-    height: auto;
+    height: 80dvh;
   }
 
   .searchContainer {
