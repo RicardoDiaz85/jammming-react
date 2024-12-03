@@ -66,13 +66,13 @@
 /* Add responsiveness */
 @media (max-width: 700px) {
   .navbar {
-    padding: 0.5rem 1rem 0rem 1rem;
+    padding: 0 1rem 0rem 1rem;
     width: auto;
     overflow: hidden;
   }
 
   .app {
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: auto;
     overflow: auto;
     overflow-x: scroll;
